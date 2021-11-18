@@ -18,30 +18,16 @@ spec:
     spec:
       containers:
         - name: appdeploy
-          image: appdocker
-          imagePullPolicy: Never
+          image: dock-reg-0001.ml/asset-app
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
-          volumeMounts:
-            - mountPath: "/data/certs"
-              name: ca-certs
-              readOnly: true
-      volumes:
-        - name: ca-certs
-          secret:
-            secretName: <username>-secret
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: appdeploy
-  labels:
-    app: asset-app
-spec:
-  ports:
-    - port: 80
-      protocol: TCP
-      name: flask
-  selector:
-    app: asset-app
-  type: LoadBalancer
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 5000
+            initialDelaySeconds: 3
+            periodSeconds: 3
+      imagePullSecrets:
+        - name: regcred
+
