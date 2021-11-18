@@ -1,0 +1,17 @@
+name: K8s Schema Validation
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: k8s schema validation
+        uses: instrumenta/kubeval-action@master
+        with:
+          files: k8s-artifacts
