@@ -16,7 +16,7 @@ kubectl create namespace argocd
 ```
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
-### Login to argocd server
+### Login to Argo CD server
 ```
 kubectl port-forward -n argocd svc/argocd-server 8080:80
 ```
@@ -34,4 +34,4 @@ Change the password using the GUI <br>
 ```
 kubectl apply -f argocd/
 ```
-This method of deploying the application only checks for changes every 3 minutes. If you want to immidaitely reflect the cahnges, intigrate your GitHub account and select this project. 
+This method of deploying the application only checks for changes every 3 minutes. If you want to immidaitely reflect the changes, intigrate your GitHub account and select this project using the Argo CD GUI. 
