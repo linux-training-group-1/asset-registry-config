@@ -18,3 +18,16 @@ Create argo project and deploy the artifacts<br>
 ```
 kubectl apply -f argocd/
 ```
+Login to argocd server
+```
+kubectl port-forward -n argocd svc/argocd-server 8080:80
+```
+Username: admin<br>
+Password: 
+```
+kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
+```
+copy the password and base64 decode it<br>
+```
+echo gvyuefgbvfiv | base64 --decode
+```
