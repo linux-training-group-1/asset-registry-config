@@ -18,3 +18,4 @@ spec:
     automated:
       selfHeal: true
       prune: true
+# consider logging into Argo GUI and integrating the project from there
