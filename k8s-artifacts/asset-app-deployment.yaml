@@ -18,13 +18,13 @@ spec:
     spec:
       containers:
         - name: appdeploy
-          image: dock-reg-0001.ml/asset-app
+          image: dock-reg-0001.ml/asset-app:0.1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
           livenessProbe:
             httpGet:
-              path: /api/health
+              path: /health
               port: 5000
             initialDelaySeconds: 3
             periodSeconds: 3
