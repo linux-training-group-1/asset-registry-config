@@ -9,4 +9,6 @@ image:
   dockerRegistry: dock-reg-0001.ml
   nameTag: asset-app:0.1.4
 
+namesapce: default
+
 
