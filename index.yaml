@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  asset-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-11-27T15:53:07.844469229Z"
+    description: Helm chart for Asset Application
+    digest: 58a22d2ff2ac18ad835cbc169fa1bb7508873312d1b7c8a31b7c6cc2facef48e
+    name: asset-app
+    type: application
+    urls:
+    - https://github.com/linux-training-group-1/asset-registry-config/releases/download/asset-app-1.1.2/asset-app-1.1.2.tgz
+    version: 1.1.2
+generated: "2021-11-27T15:53:07.844474029Z"
