@@ -6,8 +6,9 @@ metadata:
 spec:
   project: default
   source:
+    chart: asset-app
     repoURL: https://github.com/linux-training-group-1/asset-registry-config.git
-    targetRevision: HEAD
+    targetRevision: 0.1.0
     path: k8s-artifacts
   destination:
     server: https://kubernetes.default.svc
