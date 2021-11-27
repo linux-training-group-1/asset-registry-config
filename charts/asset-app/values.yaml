@@ -9,21 +9,4 @@ image:
   dockerRegistry: dock-reg-0001.ml
   nameTag: asset-app:0.1.2
 
-ingress:
-  enabled: true
-
-resources:
-   limits:
-     cpu: 100m
-     memory: 128Mi
-   requests:
-     cpu: 100m
-     memory: 128Mi
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-   targetMemoryUtilizationPercentage: 80
 
