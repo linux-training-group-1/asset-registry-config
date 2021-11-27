@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: appdeploy
-          image: dock-reg-0001.mlasset-app:0.1.4
+          image: dock-reg-0001.ml/asset-app:0.1.4
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
