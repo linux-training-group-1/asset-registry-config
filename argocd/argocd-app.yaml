@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/linux-training-group-1/asset-registry-config.git
     targetRevision: HEAD
-    path: kustomization
+    path: manifests
   destination:
     server: https://kubernetes.default.svc
     namespace: default
