@@ -3,7 +3,7 @@ kind: Kustomization
 
 images:
   - name: dock-reg-0001.ml/asset-app
-    newTag: 1.1.5
+    newTag: latest
 
 resources:
   - ../../manifests
