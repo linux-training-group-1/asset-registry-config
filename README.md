@@ -29,7 +29,10 @@ copy the password and base64 decode it<br>
 echo gvyuefgbvfiv | base64 --decode
 ```
 Change the password using the GUI <br>
+### Apply the docker registry lodin credentials
+Use kubectl apply
 ### Create an argo project and deploy the artifacts<br>
+Apply the Argocd application and the Kustomize config map 
 ```
 kubectl apply -f argocd/
 ```
