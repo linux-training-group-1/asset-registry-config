@@ -5,9 +5,10 @@ metadata:
 spec:
   selector:
     app: mysql
+  type: ClusterIP
   ports:
-    - port: 3306
-  clusterIP: LoadBalancer
+    - targetPort: 3306
+      port: 3306
 ---
 # only for testing purposes
 apiVersion: apps/v1
