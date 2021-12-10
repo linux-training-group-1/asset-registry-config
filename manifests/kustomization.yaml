@@ -8,3 +8,4 @@ resources:
   - redis-configmap.yaml
   - redis-pod.yaml
   - redis-service.yaml
+  - asset-app-config.yaml
