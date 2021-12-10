@@ -12,6 +12,16 @@ configMapGenerator:
       - MYSQL_PORT=3306
       - REDIS_HOST=redis-service
       - REDIS_PORT=6379
+replicas:
+  - name: appdeploy
+    count: 1
+
+## use a secrets generator
+#secretGenerator:
+#  - name: db-user-pass
+#    files:
+#      - username.txt
+#      - password.txt
 
 resources:
   - ../../manifests
