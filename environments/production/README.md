@@ -1,6 +1,6 @@
 # The Production Environment 
 The production environment contains the Flask Application, Redis within the production K8s cluster's default namespace, Mysql outside the K8s cluster.<br>
-ArgoDC runs in argocd namespace and fluentd runs in fluentd namespace.<br>
+ArgoDC runs in the argocd namespace and fluentd runs in the fluentd namespace.<br>
 Config map will be created/updated at each deployment. But secrets have to be created separately, 
 after initialization of the cluster<br>
 
@@ -29,7 +29,7 @@ copy the password and base64 decode it<br>
 ```
 echo gvyuefgbvfiv | base64 --decode
 ```
-Change the password using the GUI (Login: [http://localhost:8080/](http://localhost:8080/))<br>
+Change the password using the GUI ( use `kubectl port-forward -n argocd svc/argocd-server 8080:80` and Login: [http://localhost:8080/](http://localhost:8080/) )<br>
 ### Apply the docker registry image pull secrets
 Use kubectl apply
 ### Add other secrets as well - mysql username, password etc
@@ -40,5 +40,5 @@ kubectl apply -f argocd/
 ```
 This method of deploying the application only checks for changes every 3 minutes. If you want to immidaitely reflect the changes, intigrate your GitHub account and select this project using the Argo CD GUI. 
 
-### Install Fluentd
+## Install Fluentd
 TODO 
