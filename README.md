@@ -30,6 +30,7 @@ echo gvyuefgbvfiv | base64 --decode
 Change the password using the GUI (Login: [http://localhost:8080/](http://localhost:8080/))<br>
 ### Apply the docker registry image pull secrets
 Use kubectl apply
+### Add other secrets as well - mysql username, password etc
 ### Create an argo project and deploy the artifacts<br>
 Apply the Argocd application and the Kustomize config map 
 ```
