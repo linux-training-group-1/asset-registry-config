@@ -61,6 +61,8 @@ spec:
                 secretKeyRef:
                   name: app-secret
                   key: SECRET_KEY
+#                  alternative1: use a file as a volume mount
+#                  alternative2: use Hashicorp Vault
           ports:
             - containerPort: 5000
           readinessProbe:
