@@ -3,5 +3,14 @@ kind: Kustomization
 images:
   - name: dock-reg-0001.ml/asset-app
     newTag: 0.1.12
+configMapGenerator:
+  - name: app-config
+    behavior: replace
+    literals:
+        - MYSQL_HOST=mysql-service
+        - MYSQL_PORT=3306
+        - REDIS_HOST=redis-service
+        - REDIS_PORT=6379
+# TODO replace mysql host name
 resources:
   - ../../manifests
