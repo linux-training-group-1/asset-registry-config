@@ -4,7 +4,17 @@ kind: Kustomization
 images:
   - name: dock-reg-0001.ml/asset-app
     newTag: latest
+configMapGenerator:
+  - name: app-config
+    behavior: replace
+    literals:
+      - MYSQL_HOST=mysql-service
+      - MYSQL_PORT=3306
+      - REDIS_HOST=redis-service
+      - REDIS_PORT=6379
 
 resources:
   - ../../manifests
   - mysql.yaml
+  - mysql-secret.yaml
+  - app-secret.yaml
