@@ -14,7 +14,7 @@ configMapGenerator:
       - REDIS_PORT=6379
 replicas:
   - name: appdeploy
-    count: 3
+    count: 2
 
 ## use a secrets generator
 #secretGenerator:
