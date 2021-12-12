@@ -14,6 +14,9 @@ Copy the secret to a file<br>
 ![Screenshot from 2021-12-12 10-54-05](https://user-images.githubusercontent.com/32504465/145701482-95169c2c-3555-490b-bb0e-19ea83ef2f25.png)<br>
 ### use kubectl apply
 `kubectl apply -f <file-name.yaml>`
+### Set up the ingress
+kubectl apply -f  https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml
+
 ### Deploy automatically
 Trigger the CI pipeline<br>
 You can push a commit or 're-run all jobs' button after selecting an action on the [Actions page](https://github.com/linux-training-group-1/asset-registry/actions)
@@ -25,8 +28,12 @@ This command will download the kustomize executable to the current directory
 ```
 curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 ```
+### Clone the repo
+```
+git clone https://github.com/linux-training-group-1/asset-registry-config.git
+```
 ### Deploy with kubectl apply
 ```
-kustomize build | kubectl apply -f -
+./kustomize build asset-registry-config/environments/staging | kubectl apply -f -
 ```
 
