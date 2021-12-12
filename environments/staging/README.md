@@ -4,7 +4,7 @@ MySQL is deployed without a persistent storage. Therefore, it will lose any info
 The secrets and config maps are also defined in this directory. 
 
 ### Create a GKE cluster
-Create a cluster; name=cluster-1
+Create a cluster; name=cluster-1<br>
 Change the cluster name, project and GKE zone in the [GitHub actions ci file](https://github.com/linux-training-group-1/asset-registry/blob/0bcd566e24d0c99a90e3aaba1026da0cd4a616c0/.github/workflows/ci.yml#L8) 
 ### Add the regcred secret for docker registry config file
 This config contains the credentials for the private docker registry.<br>
