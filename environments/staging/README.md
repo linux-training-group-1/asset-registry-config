@@ -17,8 +17,9 @@ Copy the secret to a file<br>
 `kubectl apply -f <file-name.yaml>`
 
 ### Deploy automatically
-Trigger the CI pipeline<br>
+Trigger the CI pipeline <br>
 You can push a commit or 're-run all jobs' button after selecting an action on the [Actions page](https://github.com/linux-training-group-1/asset-registry/actions)
+
 ---
 ## How to deploy manually
 ### Spinup a cloud shell after creating a cluster
