@@ -56,4 +56,8 @@ Correctly configured staging environment should look like below:<br>
 ![workloads](https://user-images.githubusercontent.com/32504465/145707740-b6b78d87-3dd6-4f50-9865-0407b605bd81.png)
 <br>
 ![services](https://user-images.githubusercontent.com/32504465/145707733-a5868d3e-276f-4ea4-9860-d2c3af6496e0.png)
+<br>
+![Screenshot from 2021-12-12 15-47-25](https://user-images.githubusercontent.com/32504465/145708554-c07c88fc-7f4b-4f48-b5b8-e05f13b38343.png)
+<br>
+Naviate to the Ingress's IP address to access the Asset application.
 
