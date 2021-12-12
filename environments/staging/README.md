@@ -17,8 +17,8 @@ Copy the secret to a file<br>
 `kubectl apply -f <file-name.yaml>`
 
 ### Deploy automatically
-Trigger the CI pipeline <br>
-You can push a commit or 're-run all jobs' button after selecting an action on the [Actions page](https://github.com/linux-training-group-1/asset-registry/actions)
+By Triggering the CI pipeline: <br>
+You can push a commit to the 'main' branch of the [asset-registry repo](https://github.com/linux-training-group-1/asset-registry/tree/main) OR 're-run all jobs' button after selecting an action on the [Actions page](https://github.com/linux-training-group-1/asset-registry/actions)
 
 ---
 ## How to deploy manually
@@ -36,7 +36,7 @@ git clone https://github.com/linux-training-group-1/asset-registry-config.git
 ```
 ./kustomize build asset-registry-config/environments/staging | kubectl apply -f -
 ```
-### Expose mysql service
+### Port-forward the mysql service
 ```
 kubectl port-forward svc/mysql-service  3306:3306 &
 ```
