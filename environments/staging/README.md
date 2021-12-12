@@ -49,3 +49,10 @@ mysql -h localhost -P 3306 --protocol=tcp -u root --password=password < inserts.
 The table structure and the mysql user for the application is described in `table.sql`<br>
 If the mysql password is incorrect, read the mysql-secret using `kubectl get secret mysql-secret -o yaml` and use `echo '<password>' | base64 --decode` to decode the root password<br>
 Now the staging environment is ready to be used.<br>
+
+Correctly configured staging environment shoul look like below:<br>
+
+![Screenshot from 2021-12-12 14-42-28](https://user-images.githubusercontent.com/32504465/145707740-b6b78d87-3dd6-4f50-9865-0407b605bd81.png)
+<br>
+![Screenshot from 2021-12-12 14-42-19](https://user-images.githubusercontent.com/32504465/145707733-a5868d3e-276f-4ea4-9860-d2c3af6496e0.png)
+
