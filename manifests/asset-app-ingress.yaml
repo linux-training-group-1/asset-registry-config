@@ -2,8 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-asset
-  annotations:
-    kubernetes.io/ingress.class: gce
 spec:
   rules:
      - http:
@@ -15,6 +13,5 @@ spec:
                 name: asset-service
                 port:
                   number: 5000
-  ingressClassName: nginx
 
 #todo change app with real domain name
