@@ -14,8 +14,6 @@ Copy the secret to a file<br>
 ![Screenshot from 2021-12-12 10-54-05](https://user-images.githubusercontent.com/32504465/145701482-95169c2c-3555-490b-bb0e-19ea83ef2f25.png)<br>
 ### use kubectl apply
 `kubectl apply -f <file-name.yaml>`
-### Set up the ingress
-kubectl apply -f  https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml
 
 ### Deploy automatically
 Trigger the CI pipeline<br>
@@ -36,4 +34,18 @@ git clone https://github.com/linux-training-group-1/asset-registry-config.git
 ```
 ./kustomize build asset-registry-config/environments/staging | kubectl apply -f -
 ```
-
+### Expose mysql service
+```
+kubectl port-forward svc/mysql-service  3306:3306 &
+```
+This command will run in the background
+### Add the sql tables and data
+```
+wget https://raw.githubusercontent.com/linux-training-group-1/asset-registry/main/scripts/table.sql
+wget https://raw.githubusercontent.com/linux-training-group-1/asset-registry/main/scripts/inserts.sql
+mysql -h localhost -P 3306 --protocol=tcp -u root --password=password < table.sql
+mysql -h localhost -P 3306 --protocol=tcp -u root --password=password < inserts.sql
+```
+The table structure and the mysql user for the application is described in `table.sql`<br>
+If the mysql password is incorrect, read the mysql-secret using `kubectl get secret mysql-secret -o yaml` and use `echo '<password>' | base64 --decode` to decode the root password<br>
+Now the staging environment is ready to be used.<br>
