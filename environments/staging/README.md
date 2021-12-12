@@ -4,14 +4,15 @@ MySQL is deployed without a persistent storage. Therefore, it will lose any info
 The secrets and config maps are also defined in this directory. 
 
 ### Create a GKE cluster
-Create a cluster - type: autopilot<br>
+Create a cluster; name=cluster-1
 Change the cluster name, project and GKE zone in the [GitHub actions ci file](https://github.com/linux-training-group-1/asset-registry/blob/0bcd566e24d0c99a90e3aaba1026da0cd4a616c0/.github/workflows/ci.yml#L8) 
-### Add the regcred secret for docker config file
-The secret can be found here<br>
+### Add the regcred secret for docker registry config file
+This config contains the credentials for the private docker registry.<br>
+This secret can be found here<br>
 https://docs.google.com/document/d/1wPSJVYKU5EWj_Lu7uTDaZhxoQJK2BvIB11MB7hpQfmQ/edit#<br>
 ### Spinup a cloud shell
 Copy the secret to a file<br>
-![Screenshot from 2021-12-12 10-54-05](https://user-images.githubusercontent.com/32504465/145701482-95169c2c-3555-490b-bb0e-19ea83ef2f25.png)<br>
+![cloud-shell](https://user-images.githubusercontent.com/32504465/145701482-95169c2c-3555-490b-bb0e-19ea83ef2f25.png)<br>
 ### use kubectl apply
 `kubectl apply -f <file-name.yaml>`
 
@@ -50,9 +51,9 @@ The table structure and the mysql user for the application is described in `tabl
 If the mysql password is incorrect, read the mysql-secret using `kubectl get secret mysql-secret -o yaml` and use `echo '<password>' | base64 --decode` to decode the root password<br>
 Now the staging environment is ready to be used.<br>
 
-Correctly configured staging environment shoul look like below:<br>
+Correctly configured staging environment should look like below:<br>
 
-![Screenshot from 2021-12-12 14-42-28](https://user-images.githubusercontent.com/32504465/145707740-b6b78d87-3dd6-4f50-9865-0407b605bd81.png)
+![workloads](https://user-images.githubusercontent.com/32504465/145707740-b6b78d87-3dd6-4f50-9865-0407b605bd81.png)
 <br>
-![Screenshot from 2021-12-12 14-42-19](https://user-images.githubusercontent.com/32504465/145707733-a5868d3e-276f-4ea4-9860-d2c3af6496e0.png)
+![services](https://user-images.githubusercontent.com/32504465/145707733-a5868d3e-276f-4ea4-9860-d2c3af6496e0.png)
 
