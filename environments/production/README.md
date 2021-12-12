@@ -1,8 +1,8 @@
 # The Production Environment 
 The production environment contains the Flask Application, Redis within the production K8s cluster's default namespace, Mysql outside the K8s cluster.<br>
 ArgoDC runs in the argocd namespace and fluentd runs in the fluentd namespace.<br>
-Config map will be created/updated at each deployment. But secrets have to be created separately, 
-after initialization of the cluster<br>
+Config map will be automatically created/updated at each deployment. But secrets have to be created manually, 
+after initializing the cluster<br>
 
 [Asset registry repo](https://github.com/linux-training-group-1/asset-registry) contains the CI pipeline that will build and push the application docker images. Then the CI agent (GitHub Actions) will update this repository with the new k8s configs (Ex: new docker image versions).<br>
 Argo CD(Deployed on K8s cluster) will monitor this repo and pull any changes to the K8s cluster.<br>
@@ -27,18 +27,25 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
 ```
 copy the password and base64 decode it<br>
 ```
-echo gvyuefgbvfiv | base64 --decode
+echo <password> | base64 --decode
 ```
 Change the password using the GUI ( use `kubectl port-forward -n argocd svc/argocd-server 8080:80` and Login: [http://localhost:8080/](http://localhost:8080/) )<br>
-### Apply the docker registry image pull secrets
-Use kubectl apply
+### Apply the docker registry image pull secrets (regcred)
+This config contains the credentials for the private docker registry.<br>
+This secret can be found here<br>
+https://docs.google.com/document/d/1wPSJVYKU5EWj_Lu7uTDaZhxoQJK2BvIB11MB7hpQfmQ/edit#<br>
+### Spinup a cloud shell
+Copy the secret to a file<br>
+![cloud-shell](https://user-images.githubusercontent.com/32504465/145701482-95169c2c-3555-490b-bb0e-19ea83ef2f25.png)<br>
+##### use kubectl apply
+`kubectl apply -f <file-name.yaml>`
 ### Add other secrets as well - mysql username, password etc
 ### Create an argo project and deploy the artifacts<br>
 Apply the Argocd application and the Kustomize config map
 ```
 kubectl apply -f argocd/
 ```
-This method of deploying the application only checks for changes every 3 minutes. If you want to immidaitely reflect the changes, intigrate your GitHub account and select this project using the Argo CD GUI. 
+This method of deploying the application only checks for changes every 3 minutes. If you want to immediately reflect the changes, integrate your GitHub account and select this project using the Argo CD GUI. 
 
-## Install Fluentd
+## Install Fluentd for monitoring
 TODO 
