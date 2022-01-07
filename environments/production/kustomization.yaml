@@ -12,5 +12,6 @@ configMapGenerator:
       - REDIS_HOST=redis-service
       - REDIS_PORT=6379
 # TODO replace mysql host name
+namespace: prod
 resources:
   - ../../manifests

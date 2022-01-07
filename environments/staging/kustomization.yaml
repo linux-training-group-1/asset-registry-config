@@ -15,7 +15,7 @@ configMapGenerator:
 replicas:
   - name: appdeploy
     count: 2
-
+namespace: default
 ## use a secrets generator
 #secretGenerator:
 #  - name: db-user-pass
