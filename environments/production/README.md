@@ -41,9 +41,13 @@ Copy the secret to a file<br>
 `kubectl apply -f <file-name.yaml>`
 ### Add other secrets as well - mysql username, password etc
 ### Create an argo project and deploy the artifacts<br>
+Clone this project
+```
+git clone https://github.com/linux-training-group-1/asset-registry-config.git
+```
 Apply the Argocd application and the Kustomize config map
 ```
-kubectl apply -f argocd/
+kubectl apply -f asset-registry-config/argocd/
 ```
 This method of deploying the application only checks for changes every 3 minutes. If you want to immediately reflect the changes, integrate your GitHub account and select this project using the Argo CD GUI. 
 
