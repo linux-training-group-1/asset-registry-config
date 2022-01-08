@@ -7,3 +7,4 @@ data:
   MYSQL_PORT: "3306"
   REDIS_HOST: "redis-service"
   REDIS_PORT: "6379"
+  MYSQL_DATABASE: "asset-db"
