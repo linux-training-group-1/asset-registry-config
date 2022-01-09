@@ -36,6 +36,7 @@ Change the password using the GUI ( use `kubectl port-forward -n argocd svc/argo
 This config contains the credentials for the private docker registry.<br>
 This secret can be found here<br>
 https://docs.google.com/document/d/1wPSJVYKU5EWj_Lu7uTDaZhxoQJK2BvIB11MB7hpQfmQ/edit#<br>
+Be sure to change the namespace property before applying the yaml resource <br>
 ### Spinup a cloud shell
 Copy the secret to a file<br>
 ![cloud-shell](https://user-images.githubusercontent.com/32504465/145701482-95169c2c-3555-490b-bb0e-19ea83ef2f25.png)<br>
