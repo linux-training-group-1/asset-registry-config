@@ -11,7 +11,9 @@ Argo CD(Deployed on K8s cluster) will monitor this repo and pull any changes to 
 
 ```
 kubectl create namespace argocd
+kubectl create namespace prod
 ```
+For ArgoCD and Production
 
 ```
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
