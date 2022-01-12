@@ -8,4 +8,5 @@ Setup guide for the Production environment: [production](/environments/productio
 Staging and Production environment are two serpetrate k8s namespaces. 
 
 The production environment: <br>
-![LT full deployment](https://user-images.githubusercontent.com/32504465/147910197-0ddb996d-6842-4c21-8ad9-4afccbd46915.png)
+
+![LT full deployment](https://user-images.githubusercontent.com/32504465/149047201-161c174a-8d1c-43c9-a121-d36a59c2cbe4.png)
