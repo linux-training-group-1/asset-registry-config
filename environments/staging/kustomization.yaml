@@ -28,4 +28,4 @@ resources:
   - mysql.yaml
   - mysql-secret.yaml
   - app-secret.yaml
-  - asset-app-ingress.yaml
+  - ingress-staging.yaml

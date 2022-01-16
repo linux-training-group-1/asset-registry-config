@@ -17,4 +17,4 @@ namespace: prod
 resources:
   - ../../manifests
   - cert.yaml
-  - asset-app-ingress.yaml
+  - ingress-prod.yaml
