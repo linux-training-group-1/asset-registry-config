@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: ingress-asset
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: asset-app-grp1.ml
+    kubernetes.io/ingress.global-static-ip-name: hellodwefmdfc
     networking.gke.io/managed-certificates: managed-cert
     kubernetes.io/ingress.class: "gce"
 spec:
