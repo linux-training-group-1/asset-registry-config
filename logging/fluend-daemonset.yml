@@ -63,7 +63,7 @@ spec:
         image: fluent/fluentd-kubernetes-daemonset:v1.4.2-debian-elasticsearch-1.1
         env:
           - name:  FLUENT_ELASTICSEARCH_HOST
-            value: "35.188.40.214"
+            value: "34.82.186.182"
           - name:  FLUENT_ELASTICSEARCH_PORT
             value: "9200"
           - name: FLUENT_ELASTICSEARCH_SCHEME
@@ -71,7 +71,7 @@ spec:
           - name: FLUENT_CONTAINER_TAIL_EXCLUDE_PATH
             value: /var/log/containers/fluent*
           - name: FLUENT_CONTAINER_TAIL_PARSER_TYPE
-            value: /^(?<time>.+) (?<stream>stdout|stderr)( (?<logtag>.))? (?<log>.*)$/
+            value: /^(?<time>.+) (?<stream>stdout|stderr) [^ ]* (?<log>.*)$/
           - name: FLUENT_ELASTICSEARCH_SSL_VERIFY
             value: "false"
           - name: FLUENT_ELASTICSEARCH_SSL_VERSION
@@ -79,7 +79,10 @@ spec:
           - name: FLUENT_ELASTICSEARCH_USER
             value: "elastic"
           - name: FLUENT_ELASTICSEARCH_PASSWORD
-            value: "qmkugH7CekCTrIWuS5ei"
+            valueFrom:
+              secretKeyRef:
+                name: es-creds
+                key: password
           - name: FLUENT_ELASTICSEARCH_LOGSTASH_PREFIX
             value: "k8s-fluentd"
         resources:
