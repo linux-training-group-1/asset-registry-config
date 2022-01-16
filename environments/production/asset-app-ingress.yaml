@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-asset
+  name: ingress-prod
   annotations:
     kubernetes.io/ingress.global-static-ip-name: hellodwefmdfc
     networking.gke.io/managed-certificates: managed-cert
