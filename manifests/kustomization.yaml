@@ -3,7 +3,6 @@ kind: Kustomization
 
 resources:
   - asset-app-deployment.yaml
-  - asset-app-ingress.yaml
   - asset-app-service.yaml
   - redis-configmap.yaml
   - redis-pod.yaml
