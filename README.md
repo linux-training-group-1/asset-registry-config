@@ -15,3 +15,4 @@ The production environment: <br>
 The flow:
 
 ![argopull](https://user-images.githubusercontent.com/32504465/149806199-e1574998-607c-416b-94be-81f92135f40a.png)
+Please not that logging namespace which runs fluentd is not shown here.
