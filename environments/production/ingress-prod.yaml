@@ -10,6 +10,7 @@ spec:
   tls:
     - secretName: tls-cert
   rules:
+    - host: asset-app-grp1.ml
      - http:
         paths:
           - path: /
