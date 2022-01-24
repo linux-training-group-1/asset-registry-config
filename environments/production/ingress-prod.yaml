@@ -4,11 +4,11 @@ metadata:
   name: ingress-prod
   annotations:
     kubernetes.io/ingress.global-static-ip-name: hellodwefmdfc
-    #    networking.gke.io/managed-certificates: managed-cert
+    networking.gke.io/managed-certificates: managedcert
     kubernetes.io/ingress.class: "gce"
 spec:
-  tls:
-    - secretName: tls-cert
+#  tls:
+#    - secretName: tls-cert
   rules:
     - host: asset-app-grp1.ml
       http:

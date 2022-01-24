@@ -1,7 +1,7 @@
 apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
 metadata:
-  name: managed-cert
+  name: managedcert
 spec:
   domains:
     - asset-app-grp1.ml

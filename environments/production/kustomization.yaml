@@ -16,5 +16,5 @@ configMapGenerator:
 namespace: prod
 resources:
   - ../../manifests
-#  - cert.yaml
+  - cert.yaml
   - ingress-prod.yaml
