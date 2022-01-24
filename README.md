@@ -9,4 +9,11 @@ Staging and Production environment are two serpetrate k8s namespaces.
 
 The production environment: <br>
 
-![LT full deployment](https://user-images.githubusercontent.com/32504465/149047201-161c174a-8d1c-43c9-a121-d36a59c2cbe4.png)
+![LT full deployment](https://user-images.githubusercontent.com/32504465/149806430-d612c1d2-2621-42dc-b7cf-f0ff1da972e8.png)
+
+
+The flow:
+
+![argopull](https://user-images.githubusercontent.com/32504465/149806199-e1574998-607c-416b-94be-81f92135f40a.png)
+<br>
+Please not that logging namespace which runs fluentd is not shown here.
