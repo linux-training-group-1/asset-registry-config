@@ -23,10 +23,10 @@ spec:
           resources:
             limits:
               memory: "400Mi"
-              cpu: "0.2"
+              cpu: "200m"
             requests:
               memory: "100Mi"
-              cpu: "0.1"
+              cpu: "100m"
           env:
             - name: MYSQL_HOST
               valueFrom:
