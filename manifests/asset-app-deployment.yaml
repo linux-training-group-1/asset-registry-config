@@ -20,6 +20,13 @@ spec:
         - name: appdeploy
           image: dock-reg-0001.ml/asset-app:0.1.4
           imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "900Mi"
+              cpu: "1.0"
+            requests:
+              memory: "300Mi"
+              cpu: "0.5"
           env:
             - name: MYSQL_HOST
               valueFrom:
