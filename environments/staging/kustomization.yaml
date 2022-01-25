@@ -4,6 +4,7 @@ kind: Kustomization
 images:
   - name: dock-reg-0001.ml/asset-app
     newTag: latest
+namePrefix: 'staging-'
 configMapGenerator:
   - name: app-config
     behavior: replace
