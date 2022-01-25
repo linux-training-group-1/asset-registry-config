@@ -52,7 +52,16 @@ Apply the Argocd application and the Kustomize config map
 ```
 kubectl apply -f asset-registry-config/argocd/
 ```
-This method of deploying the application only checks for changes every 3 minutes. If you want to immediately reflect the changes, integrate your GitHub account and select this project using the Argo CD GUI. 
+This method of deploying the application only checks for changes every 3 minutes. If you want to immediately reflect the changes, integrate your GitHub account and select this project using the Argo CD GUI.<br> 
 
-## Install Fluentd for monitoring
-TODO 
+### Configure SSL
+Lease an IP address from GCP.<br>
+Lease a doamin name from freenom (we got `asset-app-grp1.ml`). Then point the domian name to the Production ingress's IP address<br>
+![Screenshot from 2022-01-25 07-31-43](https://user-images.githubusercontent.com/32504465/150896958-9cdc7b5c-1905-4b9b-9123-d6a76ef79ad5.png)
+<br>
+
+Add a Google managed SSL certificate to the doamin name.
+ ```
+ kubectl apply -f asset-registry-config/environments/production/cert.yaml
+ ```
+You may have to wait upto 1 hour to get the certificate created for you.
