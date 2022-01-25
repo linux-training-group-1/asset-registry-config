@@ -4,14 +4,14 @@ kind: Kustomization
 images:
   - name: dock-reg-0001.ml/asset-app
     newTag: latest
-namePrefix: 'staging-'
+#namePrefix: 'staging-'
 configMapGenerator:
   - name: app-config
     behavior: replace
     literals:
-      - MYSQL_HOST=staging-mysql-service
+      - MYSQL_HOST=mysql-service
       - MYSQL_PORT=3306
-      - REDIS_HOST=staging-redis-service
+      - REDIS_HOST=redis-service
       - REDIS_PORT=6379
 replicas:
   - name: appdeploy
