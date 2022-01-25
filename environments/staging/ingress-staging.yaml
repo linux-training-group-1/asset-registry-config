@@ -10,7 +10,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: asset-service
+                name: staging-asset-service
                 port:
                   number: 5000
 
