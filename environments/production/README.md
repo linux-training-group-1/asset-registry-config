@@ -53,15 +53,20 @@ Add a Google managed SSL certificate to the doamin name.
  ```
  kubectl apply -f asset-registry-config/environments/production/cert.yaml
  ```
-You may have to wait upto 1 hour to get the certificate created for you.<b>
-### Create an argo project and deploy the artifacts<br>
-Clone this project
+You may have to wait upto 1 hour to get the certificate created for you.<br>
+### Create an argo project and deploy the artifacts <br>
+
+Clone this project <br>
 ```
 git clone https://github.com/linux-training-group-1/asset-registry-config.git
 ```
-Apply the Argocd application and the Kustomize config map
+Apply the Argocd application and the Kustomize config map<br>
 ```
 kubectl apply -f asset-registry-config/argocd/
 ```
 This method of deploying the application only checks for changes every 3 minutes. If you want to immediately reflect the changes, integrate your GitHub account and select this project using the Argo CD GUI.<br> 
+ 
+### Logging and monitoring architecture
+ 
+![loggingnex](https://user-images.githubusercontent.com/32504465/151140396-c9b2f94b-856a-46b7-b286-f040ae119dcf.png)
 
